@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mojo's Cafe - Cash Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <!-- Top Section -->
+    <section id="top-section">
+
+      <!-- Left Section -->
+      <div id="left-section">
+        <h1>Mojo's Cafe</h1>
+        <p>Welcome to Mojo’s Café! Indulge in our handcrafted coffees, specialty teas, and fresh pastries.</p>
+      </div>
+
+      <!-- Right Section -->
+      <div id="right-section">
+        <div id="computer-screen-container">
+
+          <!-- Overlay and Popup -->
+          <div id="overlay"></div>
+          <div id="change-due-container">
+            <h4>Change Due</h4>
+            <div id="change-due"></div>
+            <button id="done-btn">Done</button>
+          </div>
+
+          <!-- Customer Order -->
+          <h2>Customer's Order</h2>
+          <div id="order-container">
+            <div class="menu-section" id="coffee-container"><h3>Coffees</h3></div>
+            <div class="menu-section" id="tea-container"><h3>Teas</h3></div>
+            <div class="menu-section" id="pastry-container"><h3>Pastries</h3></div>
+          </div>
+
+          <!-- Price-->
+          <h3 id="price">Price: <span id="item-price">$0.00</span></h3>
+
+          <!-- Input Container -->
+          <div id="input-container">
+            <p>Enter cash from customer:</p>
+            <div id="flex-container">
+              <input type="number" id="cash" min="0" step="0.01">
+              <button id="purchase-btn">Purchase</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Computer Base -->
+        <div id="computer-base-shadow">
+          <div id="computer-base-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Section -->
+    <section id="bottom-section">
+
+      <!-- Desk Container -->
+      <div id="desk-container">
+        <div id="change-in-drawer-container">
+          <p id="change-in-drawer-header">Change in Drawer</p>
+          <div id="change-in-drawer"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript File -->
+  <script src="script.js" defer></script>
+</body>
+</html>
