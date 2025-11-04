@@ -35,7 +35,7 @@ const menuItems = [
 ];
 
 // Display Menu Items
-function displayItems() {
+const displayItems = () => {
   menuItems.forEach(item => {
     const container = document.getElementById(`${item.type}-container`);
     const label = document.createElement('label');
@@ -49,7 +49,7 @@ function displayItems() {
 }
 
 // Update UI
-function updateUI() {
+const updateUI = () => {
   itemPrice.textContent = `$${price.toFixed(2)}`;
   changeInDrawer.innerHTML = '';
   cid.forEach(el => {
@@ -61,7 +61,7 @@ function updateUI() {
 }
 
 // Update Drawer Status
-function updateStatus(status, changeBreakdown) {
+const updateStatus = (status, changeBreakdown) => {
   changeDue.textContent = `Status: ${status}`;
   changeBreakdown.forEach(el => {
     const p = document.createElement('p');
@@ -71,7 +71,7 @@ function updateStatus(status, changeBreakdown) {
 }
 
 // Handle Change Calculation
-function handleChange(change) {
+const handleChange = (change) => {
   let changeInCents = Math.round(change*100);
   let cidInCents = cid.map(el => Math.round(el[1]*100));
   const totalCidInCents = cidInCents.reduce((a,b)=>a+b,0);
@@ -107,8 +107,7 @@ function handleChange(change) {
   }
 }
 
-// Check Cash Value
-function checkCashValue() {
+const checkCashValue = () => {
   const cashValue = Number(cash.value);
   if (cashValue < price) { 
     alert("Customer does not have enough money to purchase the item"); 
@@ -126,14 +125,14 @@ function checkCashValue() {
 }
 
 // Update price
-function updatePrice(item) {
+const updatePrice = (item) => {
   const val = parseFloat(item.value);
   price += item.checked ? val : -val;
   updateUI();
 }
 
 // Reset Order
-function resetOrder() {
+const resetOrder = () => {
   changeDueContainer.style.display = "none";
   overlay.style.display = "none";
   cash.value = "";
